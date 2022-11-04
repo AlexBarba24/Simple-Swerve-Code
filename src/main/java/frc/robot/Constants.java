@@ -27,7 +27,7 @@ public final class Constants {
         public static final double kTurningEncoderRot2Rad = kTurningMotorGearRatio * 2 * Math.PI;
         public static final double kDriveEncoderRPM2MeterPerSec = kDriveEncoderRot2Meter/60;
         public static final double kTurningEncoderRPM2RadPerSec = kTurningEncoderRot2Rad/60;
-        public static final double kPTurning = 0.5;
+        public static final double kPTurning = 0.3;
     }
 
     public static final class DriveConstants {
@@ -44,36 +44,36 @@ public final class Constants {
         );
 
 
-        public static final int kFrontLeftDriveMotorPort;
-        public static final int kFrontLeftTurningMotorPort;
-        public static final Boolean kFrontLeftDriveMotorReversed;
-        public static final Boolean kFrontLeftTurningMotorReversed;
-        public static final int kFrontLeftTurningEncoderIDA;
-        public static final int kFrontLeftTurningEncoderIDB;
+        public static final int kFrontLeftDriveMotorPort = 1;
+        public static final int kFrontLeftTurningMotorPort = 5;
+        public static final Boolean kFrontLeftDriveMotorReversed = false;
+        public static final Boolean kFrontLeftTurningMotorReversed = false;
+        public static final int kFrontLeftTurningEncoderIDA = 4;
+        public static final int kFrontLeftTurningEncoderIDB = 5;
 
-        public static final int kFrontRightDriveMotorPort;
-        public static final int kFrontRightTurningMotorPort;
-        public static final Boolean kFrontRightDriveMotorReversed;
-        public static final Boolean kFrontRightTurningMotorReversed;
-        public static final int kFrontRightTurningEncoderIDA;
-        public static final int kFrontRightTurningEncoderIDB;
+        public static final int kFrontRightDriveMotorPort = 2;
+        public static final int kFrontRightTurningMotorPort = 6;
+        public static final Boolean kFrontRightDriveMotorReversed = false;
+        public static final Boolean kFrontRightTurningMotorReversed = true;
+        public static final int kFrontRightTurningEncoderIDA = 0;
+        public static final int kFrontRightTurningEncoderIDB = 1;
         
-        public static final int kBackLeftDriveMotorPort;
-        public static final int kBackLeftTurningMotorPort;
-        public static final Boolean kBackLeftDriveMotorReversed;
-        public static final Boolean kBackLeftTurningMotorReversed;
-        public static final int kBackLeftTurningEncoderIDA;
-        public static final int kBackLeftTurningEncoderIDB;
+        public static final int kBackLeftDriveMotorPort = 3;
+        public static final int kBackLeftTurningMotorPort = 7;
+        public static final Boolean kBackLeftDriveMotorReversed = false;
+        public static final Boolean kBackLeftTurningMotorReversed = true;
+        public static final int kBackLeftTurningEncoderIDA = 6;
+        public static final int kBackLeftTurningEncoderIDB = 7;
 
-        public static final int kBackRightDriveMotorPort;
-        public static final int kBackRightTurningMotorPort;
-        public static final Boolean kBackRightDriveMotorReversed;
-        public static final Boolean kBackRightTurningMotorReversed;
-        public static final int kBackRightTurningEncoderIDA;
-        public static final int kBackRightTurningEncoderIDB;
+        public static final int kBackRightDriveMotorPort = 4;
+        public static final int kBackRightTurningMotorPort = 8;
+        public static final Boolean kBackRightDriveMotorReversed = false;
+        public static final Boolean kBackRightTurningMotorReversed = false;
+        public static final int kBackRightTurningEncoderIDA = 2;
+        public static final int kBackRightTurningEncoderIDB = 3;
 
         public static final double kPhysicalMaxSpeedMetersPerSecond = 5;
-        public static final double kPhysicalMaxAngularSpeedRadiansPerSecond = 2 * 2 * Math.PI;
+        public static final double kPhysicalMaxAngularSpeedRadiansPerSecond =2 * 2 * Math.PI;
 
         public static final double kTeleDriveMaxSpeedMetersPerSecond = kPhysicalMaxSpeedMetersPerSecond / 4;
         public static final double kTeleDriveMaxAngularSpeedRadiansPerSecond = 

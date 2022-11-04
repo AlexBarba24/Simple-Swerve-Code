@@ -45,8 +45,13 @@ public class SwerveModule{
     return driveMotor.getSelectedSensorPosition()/2048 * ModuleConstants.kDriveEncoderRot2Meter;
   }
 
-  public double getTurningPosition(){
-    return turningEncoder.get() * ModuleConstants.kTurningEncoderRot2Rad;
+  public void spinWheel(){
+    turningMotor.set(ControlMode.PercentOutput, 0.5);
+  }
+
+  public double getTurningPosition(){ 
+    return turningEncoder.getDistance()/360 * ModuleConstants.kTurningEncoderRot2Rad;
+    // return 0;
   }
 
   public double getDriveVelocity(){
@@ -54,11 +59,11 @@ public class SwerveModule{
   }
 
   public double getTurningVelocity(){
-    return turningEncoder.getRate() * ModuleConstants.kTurningEncoderRot2Rad;
+    return turningEncoder.getRate()/360 * ModuleConstants.kTurningEncoderRot2Rad;
   }
 
   public void resetEncoders(){
-    
+    turningEncoder.reset();
   }
 
   public SwerveModuleState getState(){
@@ -73,6 +78,7 @@ public class SwerveModule{
     state = SwerveModuleState.optimize(state, getState().angle);
     driveMotor.set(ControlMode.PercentOutput, state.speedMetersPerSecond / DriveConstants.kPhysicalMaxSpeedMetersPerSecond);
     turningMotor.set(ControlMode.PercentOutput,turningPidController.calculate(getTurningPosition(), state.angle.getRadians()));
+    SmartDashboard.putNumber("Turning Speed of Module: ["+id+"]", turningPidController.calculate(getTurningPosition(), state.angle.getRadians()));
     SmartDashboard.putString("Swerve["+ id + "]", state.toString());
   }
 

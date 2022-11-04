@@ -60,8 +60,16 @@ public class SwerveSubsystem extends SubsystemBase {
 
   }
 
+  // public void spinFrontRight(){
+  //   frontRight.spinWheel();
+  // }
+
   public void zeroHeading(){
     gyro.reset();
+    frontLeft.resetEncoders();
+    backLeft.resetEncoders();
+    backRight.resetEncoders();
+    frontRight.resetEncoders();
   }
 
   public double getHeading(){
